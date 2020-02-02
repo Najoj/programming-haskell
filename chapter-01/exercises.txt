@@ -1,0 +1,57 @@
+1. Give another possible calculation for the result of double (double 2)
+
+double (double 2)
+= double (2 + 2)
+= double (4)
+= 4 + 4
+= 8
+
+2. Show that sum [x] = x for any number x
+
+sum [] = 0
+sum (x:xs) = x + sum xs
+
+As sum [x] will have xs empty, it will result in x + sum [] which is x + 0 = x
+
+3. Define a function product that produces the product of a list of number, and show using your definition that product [2,3,4] = 24.
+
+product [] = 1
+product (x:xs) = x * product xs
+
+product [2,3,4]
+= 2 * product [3,4]
+= 2 * (3 * product [4])
+= 2 * (3 * (4 * product []))
+= 2 * (3 * (4 * 1))
+= 2 * (3 * 4)
+= 2 * (12)
+= 24
+
+4. How should the defintion of the function be modified so that it produces a reverse sorted version of a list?
+
+Original:
+qsort [] = []
+qsort (x:xs) = qsort smaller ++ [x] ++ qsort larger
+    where
+            smaller = [a: a <- xs, a <= x]
+            larger  = [b: b <- xs, b >  x]
+
+Modified:
+qsort [] = []
+qsort (x:xs) = qsort larger ++ [x] ++ qsort smaller
+    where
+            smaller = [a: a <- xs, a <= x]
+            larger  = [b: b <- xs, b >  x]
+
+Test:
+qsort [2,4,3,1]
+= (qsort [4,3]) ++ [2] ++ (qsort [1])
+= (qsort [] ++ [4] ++ qsort [3]) ++ [2] ++ (qsort [] ++ [1] ++ qsort [])
+= ([4] ++ (qsort [] ++ [3] qsort [])) ++ [2] ++ [1] 
+= ([4] ++ [3]) ++ [2,1] 
+= ([4,3]) ++ [2,1] 
+= [4,3,2,1] 
+
+5. What would be the effect of replacing <= by < in definiton of qsort? Hint: consider the example qsort [2,2,3,1,1].
+
+The list would exclude any duplicate numbers, ie. generating the list [1,2,3] in the example.
