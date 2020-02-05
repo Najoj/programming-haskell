@@ -1,0 +1,7 @@
+Chapter 2 First steps
+2.1 The Hugs system
+2.2 The standard prelude
+2.3 Function applications
+2.4 Haskell scripts
+2.5 Chapter remarks
+2.6 Exercises
