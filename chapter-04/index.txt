@@ -1,0 +1,10 @@
+Chapter 4 Defining functions
+4.1 New from old
+4.2 Conditional expressions
+4.3 Guarded equations
+4.4 Pattern matching
+4.5 Lambda expressions
+4.6 Sections
+4.7 Chapter remarks
+4.8 Exercises
+
