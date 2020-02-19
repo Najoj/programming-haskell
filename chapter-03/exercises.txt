@@ -1,0 +1,43 @@
+Ex 1. What are the types of the following values?
+    ['a', 'b', 'c']
+    ('a', 'b', 'c')
+    [(False, '0'), (True, '1')]
+    ([False, True]¸ ['0','1'])
+    [tail, init, reverse]
+
+Ans 1.
+[Char]
+(Char, Char, Char)
+[(Bool, Char)]
+([Bool], [Char])
+[[a] -> [a]]
+
+Ex 2. What are the types of the following functions?
+    second xs  = head (tail xs)
+    swap (x,y) = (y,x)
+    pair x y   = (x,y)
+    double x   = x*2
+    palindorme xs = reverse xs == xs
+    twice f x = f (f x)
+
+
+Ans 2.
+second :: [a] -> a
+swap :: (a,b) -> (b,a)
+pair :: a -> b -> (a, b)
+double :: Num a => a -> a
+palindorme :: Eq a => [a] -> Bool
+twice :: (w -> w) -> w -> w
+
+
+Ex 3. Check your answers to the preceding two questions using Hugs.
+Ans 3. Done (but with GHCi)
+
+Ex 4. Why is it not feasible in general for function types to be instances of
+the Eq class? When is it feasible? Hint: two functions of the same type are
+equal if they always return equal results fo equal arguments.
+Ans 4.
+The comparison operators are well-defined, and it would not make much sense to
+compare of those operators (or functions). You might still want to create your
+own compairson operator, however, and be able to use the operators in functions.
+
