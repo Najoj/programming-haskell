@@ -1,8 +1,0 @@
-Chapter 1 Introduction
-1.1 Functions
-1.2 Functional programming
-1.3 Featrures of Haskell
-1.4 Historical background
-1.5 A taste of Haskell
-1.6 Chapter remarks
-1.7 Exercises
