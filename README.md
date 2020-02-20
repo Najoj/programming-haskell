@@ -10,11 +10,11 @@ I will do the exercises with
 ## Index:
 
 1. Introduction
-  1. Functions
-  1. Functional programming
-  1. Features of Haskell
-  1. Historical background
-  1. A taste of Haskell
-  1. Chapter remarks
-  1. Exercises
+    1. Functions
+    1. Functional programming
+    1. Features of Haskell
+    1. Historical background
+    1. A taste of Haskell
+    1. Chapter remarks
+    1. Exercises
 
