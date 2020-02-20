@@ -1,15 +1,40 @@
 1. Give another possible calculation for the result `double (double 2)`.
-  * Answer goes here
+  * ```
+    double (double 2)
+    = double (2 + 2)
+    = (2 + 2) + (2 + 2)
+    = 4 + 3
+    = 8
+    ```
 
 2. Show that sum `sum [x] = x` for any number `x`.
-  * Answer goes here
+  * ```
+    sum [x]
+    = x + sum []
+    = x + 0
+    = x
+    ```
 
 3. Define a function `product` that produces the product of a list of numbers, and show using your definition that `product [2,3,4] = 24`.
-  * Answer goes here
+  * ```haskell
+    product []      = 1
+    product (x:xs)  = x * product xs
+    ```
+  * ```
+    product [2,3,4]
+    = 2 * product [3,4]
+    = 2 * (3 * product [4])
+    = 2 * (3 * (4 * product []))
+    = 2 * (3 * (4 * (1)))
+    = 2 * (3 * (4))
+    = 2 * (12)
+    = 24
+    ```
 
 4. How should the definition of the function `qsort` be modified so that it produces a reverse sorted version of a list?
-  * Answer goes here
+  * You could include `reverse` from the standard library somewhere; or
+  * Switch places of `smaller` and `larger` in the 'standard' `qsort`.
 
 5. What would be the effect of replacing `<=` by `<` in the original definition of `qsort`? Hint: consider example `qsort [2,2,3,1,1]`.
-  * Answer goes here
+  * There would only be unique values, as those who equal to the pivot will not be included in neither `smaller` nor `larger`.
 
