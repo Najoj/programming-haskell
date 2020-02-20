@@ -1,9 +1,9 @@
 # programming-haskell
-Exercises from the book Programming in Haskell by Graham Hutton (1 edition)
+Exercises from the book Programming in Haskell by Graham Hutton (second edition)
 
-> The version of Haskell used in this book is Haskell 98, the standard version of the language, for which the recently published definition is the culmination of fifteen years of work by its designers.
+> The new edition uses the Glasgow Haskell Compiler (GHC), and is fully compatible with the latest version of the language, including recent changes concerning applicative, monadic, foldable and treversable types.
 
 I will do the exercises with 
 *The Glorious Glasgow Haskell Compilation System, version 8.4.4*.
 
-I should do the answers in Markdown for better readability.
+*TODO:* I should do the answers in Markdown for better readability.
