@@ -1,4 +1,5 @@
-all: pdf
+all: 
+	make pdf MD=README.md
 
-pdf: README.md
-	pandoc README.md -o ~/tmp.pdf
+pdf: $(MD)
+	pandoc $(MD) -o markdown.pdf
