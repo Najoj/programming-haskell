@@ -1,4 +1,5 @@
-# programming-haskell
+# Programming in Haskell
+
 Exercises from the book Programming in Haskell by Graham Hutton (second edition)
 
 > The new edition uses the Glasgow Haskell Compiler (GHC), and is fully compatible with the latest version of the language, including recent changes concerning applicative, monadic, foldable and treversable types.
