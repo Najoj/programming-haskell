@@ -36,5 +36,5 @@
   * Switch places of `smaller` and `larger` in the 'standard' `qsort`.
 
 5. What would be the effect of replacing `<=` by `<` in the original definition of `qsort`? Hint: consider example `qsort [2,2,3,1,1]`.
-  * There would only be unique values, as those who equal to the pivot will not be included in neither `smaller` nor `larger`.
+  * There would only be unique values, as those who equal to the pivot will not be included in either `smaller` or `larger`.
 
