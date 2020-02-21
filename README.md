@@ -18,3 +18,12 @@ I will do the exercises with
     1. Chapter remarks
     1. Exercises
 
+2. First steps
+    2. Glasgow Haskell Compiler
+    2. Installing and starting
+    2. Standard prelude
+    2. Function application
+    2. Haskell scripts
+    2. Chapter remarks
+    2. Exercises
+
