@@ -12,6 +12,7 @@ seqn (act:acts) = do x <- act
                      xs <- seqn acts
                      return (x:xs)
 
+product :: Num a => [a] -> a
 product []      = 1
 product (x:xs)  = x * Main.product xs
 
