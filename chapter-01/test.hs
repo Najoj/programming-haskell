@@ -6,7 +6,7 @@ qsort (x:xs)    = qsort smaller ++ [x] ++ qsort larger
                         larger = [a | a <- xs, a > x]
 
 seqn :: [IO a] -> IO [a]
--- seqn :: Monad m -> [m a] -> m [a]
+-- seqn :: Monad m => [m a] -> m [a]
 seqn []         = return []
 seqn (act:acts) = do x <- act
                      xs <- seqn acts
