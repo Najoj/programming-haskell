@@ -25,4 +25,16 @@ I will do the exercises with
     1. Haskell scripts
     1. Chapter remarks
     1. Exercises
+3. First steps
+    1. Basic concepts
+    1. Basic types
+    1. List types
+    1. Tuple types
+    1. Function types
+    1. Curried functions
+    1. Polymorphic types
+    1. Overloaded types
+    1. Basic classes
+    1. Chapter remarks
+    1. Exercises
 
