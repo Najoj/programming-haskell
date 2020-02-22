@@ -17,7 +17,6 @@ I will do the exercises with
     1. A taste of Haskell
     1. Chapter remarks
     1. Exercises
-
 2. First steps
     2. Glasgow Haskell Compiler
     2. Installing and starting
