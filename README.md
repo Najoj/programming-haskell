@@ -25,7 +25,7 @@ I will do the exercises with
     1. Haskell scripts
     1. Chapter remarks
     1. Exercises
-3. First steps
+3. Types and classes
     1. Basic concepts
     1. Basic types
     1. List types
@@ -35,6 +35,15 @@ I will do the exercises with
     1. Polymorphic types
     1. Overloaded types
     1. Basic classes
+    1. Chapter remarks
+    1. Exercises
+4. Defining functions
+    1. New from old
+    1. Conditional expressions
+    1. Guarded equations
+    1. Pattern matching
+    1. Lambda expressions
+    1. Operator sections
     1. Chapter remarks
     1. Exercises
 
