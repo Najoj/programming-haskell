@@ -43,6 +43,9 @@ n = a `div` length xs
   last xs = xs !! x
             where
               x = (length xs) - 1
+  -- bonus
+  last (x:[]) = x
+  last (_:xs) = last xs
   ```
 
 5. The library function `init` removes the last element from a non-empty list; for example, `init [1,2,3,4,5] = [1,2,3,4]`. Show how `init` could similarly be defined in two different ways.
@@ -54,5 +57,8 @@ n = a `div` length xs
   init xs = take x xs
             where
               x = (length xs) - 1
+  -- bonus
+  init (_:[]) = []
+  init (x:xs) = [x] ++ init xs
   ```
 
