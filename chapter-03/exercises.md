@@ -7,14 +7,13 @@
     [tail,init,reverse]
 ```
 
-  *
-```
+  * ```
     [Char]
     (Char,Char,Char)
     [(Bool,Char)]
     ([Bool],[Char])
     [[a] -> [a]]
-```
+    ```
 
 2. Write down definitions that have the following types; it does not matter what the definitions actually do as long as they are type correct
 ```
@@ -24,14 +23,13 @@
     copy :: a -> (a,a)
     apply :: (a -> b) -> a -> b
 ```
-  *
-```
+  * ```
     bools = [True,False]
     nums = [[1,2,3],[2,3]]
     add a b c = a + b + c
     copy a = (a,a)
     apply f x = f x 
-```
+    ```
 
 3. What are the types of the following functions?
 ```
@@ -44,15 +42,14 @@
 ```
 Hint: take care to include the necessary class constraints in the types if the functions are defined using overloaded operators.
 
-  *
-```
+  * ```
     second :: [a] -> a
     swap :: (a,b) -> (b,a)
     pair :: a -> b -> (a,b)
     double :: Num a => a -> a
     palindrome :: Eq a => [a] -> Bool
     twice :: (a -> a) -> a -> a
-```
+    ```
 
 4. Check your answers to the preceding three questions using GHCi.
   * Done!
