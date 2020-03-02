@@ -26,8 +26,28 @@ safetail xs = tail xs
 -- False || False = False
 -- _     || _     = True
 --
--- False || b = b
--- True  || _ = True
+False || b = b
+_     || _ = True
 --
-b || c | b == c    = b
-       | otherwise = True
+-- b || c | b == c    = b
+--        | otherwise = True
+
+-- ex 5
+(&&) :: Bool -> Bool -> Bool
+x && y = if x then if y then True else False else False
+
+-- ex 7
+mult :: Int -> Int -> Int -> Int
+mult = \x -> (\y -> (\z -> x * y * z))
+
+-- ex 8
+luhnDouble :: Int -> Int
+luhnDouble x = if a > 9 then a-9 else a
+                where a = 2*x
+
+luhn :: Int -> Int -> Int -> Int -> Bool
+luhn a b c d = sum `mod` 10 == 0
+        where
+                sum = aD + b + cD + d
+                aD = luhnDouble a
+                cD = luhnDouble c

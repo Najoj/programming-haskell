@@ -24,7 +24,7 @@
     -- list indexing
     third :: [a] -> a
     third xs = xs !! 3
-    -- Pattern matching
+    -- pattern matching
     third :: [a] -> a
     third (_:(_:(x:_))) = x
     ```
@@ -64,7 +64,7 @@
     -- third
     (||) :: Bool -> Bool -> Bool
     False || b     = b
-    _     || _     = False
+    True  || _     = False
     -- fourth
     b || c | b == c    = b
            | otherwise = True
@@ -77,20 +77,30 @@
 ```
 Hint: use two nested conditional expressions.
 
-  * Answer goes here
+  * ```haskell
+    (&&) :: Bool -> Bool -> Bool
+    x && y | if x then if y then True else False else False
+    ```
 
 6. Do the same for the following alternative definition, and note the difference in the number of conditional expressions that are required:
 ```
   True  && b = b
   False && _ = False
 ```
-  * Answer goes here
+  * ```haskell
+    (&&) :: Bool -> Bool -> Bool
+    x && b | if x then b else False
+    ```
 
 7. Show how the meaning of the following curried function definition can be formalised in terms of lambda expressions:
 ```
   mult :: Int -> Int -> Int -> Int
   mult x y z = x*y*z
 ```
+  * ```haskell
+    mult :: Int -> Int -> Int -> Int
+    mult = \x -> (\y -> (\z -> x * y * z))
+    ```
 
 8. The _Luhn algorithm_ is used to check bank card numbers for simple errors such as mistyping a digit, and proceeds as follows:
   * consider each digit  as a separate number;
@@ -115,4 +125,17 @@ Using `luhnDouble` and the integer remainder function `mod`, define a function `
 ```
 In the exercises for chapter 7 we will consider a more general version of this function that accepts card numbers of any length.
 
-  * Answer goes here
+  * ```haskell
+    luhnDouble :: Int -> Int
+    luhnDouble = if a > 9 then a-9 else a
+                 where
+                    a = 2*x
+
+    luhn :: Int -> Int -> Int -> Int
+    luhn = iSum `mod` 10 == 0
+           where
+             iSum = aDouble + b + cDouble + d
+             aDouble = luhnDouble a
+             cDouble = luhnDouble c
+    ```
+
