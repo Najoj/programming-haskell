@@ -46,4 +46,12 @@ I will do the exercises with
     1. Operator sections
     1. Chapter remarks
     1. Exercises
+5. List comprehensions
+    1. Basic concepts
+    1. Guards
+    1. The `zip` function
+    1. String comprehensions
+    1. The Caesar cipher
+    1. Chapter remarks
+    1. Exercises
 
