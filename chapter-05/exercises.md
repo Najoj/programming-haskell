@@ -1,7 +1,7 @@
-1. Using a list comprehension, give an expression that calculates the sum 1<sup>2</sup> + 2<sup>2</sup> + ... 100<sup>2</sup> of the first one hundered integer squares.
+1. Using a list comprehension, give an expression that calculates the sum 1<sup>2</sup> + 2<sup>2</sup> + ... 100<sup>2</sup> of the first one hundred integer squares.
   * Answer goes here
 
-2. Suppose that a *coordinate grid* of size *m × n* is given by the list of all pairs *(x,y)* of integers such that *0 ≤ x ≤ m* and *0 ≤ y ≤ n*. Using a list comprehennsion, define a function `grid :: Int -> Int -> [(Int,Int)]` that returns a coordinate grid of a given size. For example:
+2. Suppose that a *coordinate grid* of size *m × n* is given by the list of all pairs *(x,y)* of integers such that *0 ≤ x ≤ m* and *0 ≤ y ≤ n*. Using a list comprehension, define a function `grid :: Int -> Int -> [(Int,Int)]` that returns a coordinate grid of a given size. For example:
 ```
     > grid 1 2
     [(0,0),(0,1),(0,2),(1,0),(1,1),(1,2)]
@@ -23,7 +23,7 @@
 
   * Answer goes here
 
-5. A triple *(x,y,z)* of positive integers is *Pythogorean* if it satisfies the equation *x² + y² = z²*. Using list comprehension with three generators, define a function `pyths :: Int -> [(Int,Int,Int)]` that returns the list of all such lest whose components are at most a given limit. For example:
+5. A triple *(x,y,z)* of positive integers is *Pythagorean* if it satisfies the equation *x² + y² = z²*. Using list comprehension with three generators, define a function `pyths :: Int -> [(Int,Int,Int)]` that returns the list of all such lest whose components are at most a given limit. For example:
 ```
     > pyths 10
     [(3,4,5),(4,3,5),(6,8,10),(8,6,10)]
@@ -41,15 +41,15 @@
 
 
 
-7. Show how the list of comprehensions `[(x,y) | x <- [1,2], y <- [3,4]]` with two generators can be re-ecpressed using two comprehensions with single generators. Hint: nest one comprehension within the other and make use of the library function `cancat :: [[a]] -> [a]`
+7. Show how the list of comprehensions `[(x,y) | x <- [1,2], y <- [3,4]]` with two generators can be re-expressed using two comprehensions with single generators. Hint: nest one comprehension within the other and make use of the library function `cancat :: [[a]] -> [a]`
 
   * Answer goes here
 
-8. Redefine thu function `positions` using the function `find`.
+8. Redefine the function `positions` using the function `find`.
 
   * Answer goes here
 
-9. The `scalar product` of two lists of integers *xs* and *ys* of length *n* is given by the sum of the products of correspending integers:
+9. The `scalar product` of two lists of integers *xs* and *ys* of length *n* is given by the sum of the products of corresponding integers:
 
    ![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Csum_%7Bi%3D0%7D%5E%7Bn-1%7D%20%7B%28xs_i%20%20%5Cast%20ys_i%20%29%7D&bc=White&fc=Black&im=png&fs=12&ff=modern&edit=0)
 
