@@ -1,7 +1,7 @@
 1. Using a list comprehension, give an expression that calculates the sum 1<sup>2</sup> + 2<sup>2</sup> + ... 100<sup>2</sup> of the first one hundered integer squares.
   * Answer goes here
 
-2. Suppose that a *coordinate grid* of size *m × n* is given by the list of all pairs *(x,y)* of integers such that *0 <p>&le;</p> x ≤ m* and *0 ≤ y ≤ n*. Using a list comprehennsion, define a function `grid :: Int -> Int -> [(Int,Int)]` that returns a coordinate grid of a given size. For example:
+2. Suppose that a *coordinate grid* of size *m × n* is given by the list of all pairs *(x,y)* of integers such that *0 ≤ x ≤ m* and *0 ≤ y ≤ n*. Using a list comprehennsion, define a function `grid :: Int -> Int -> [(Int,Int)]` that returns a coordinate grid of a given size. For example:
 ```
     > grid 1 2
     [(0,0),(0,1),(0,2),(1,0),(1,1),(1,2)]
@@ -50,6 +50,7 @@
   * Answer goes here
 
 9. The `scalar product` of two lists of integers *xs* and *ys* of length *n* is given by the sum of the products of correspending integers:
+
    ![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Csum_%7Bi%3D0%7D%5E%7Bn-1%7D%20%7B%28xs_i%20%20%5Cast%20ys_i%20%29%7D&bc=White&fc=Black&im=png&fs=12&ff=modern&edit=0)
 
    In a similar manner to `chisqr`, show how a list comprehension can be used to define a function `scalarproduct :: [Int] -> [Int] -> Int` that returns the scalar of two lists. For example:
