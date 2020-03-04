@@ -23,10 +23,13 @@
     third xs = head (tail (tail xs))
     -- list indexing
     third :: [a] -> a
-    third xs = xs !! 3
-    -- pattern matching
+    third xs = xs !! 2
+    -- pattern matching a
     third :: [a] -> a
     third (_:(_:(x:_))) = x
+    -- pattern matching b
+    third :: [a] -> a
+    third (_:_:x:_) = x
     ```
 
 3. Consider a function `safetail :: [a] -> [a]` that behaves in the same way  as `tail` except that it maps the empty list to itself rather than producing an error. Using `tail` and the function `null :: [a] -> Bool` that decides if a list is empty or not, define `safetail` using:
@@ -73,7 +76,7 @@
 5. Without using any other library functions or operators, show how the meaning of the following pattern matching definition for logical conjunction `&&` can be formalised using conditional expressions:
 ```
   True && True = True
-  _    && _    = True
+  _    && _    = False
 ```
 Hint: use two nested conditional expressions.
 

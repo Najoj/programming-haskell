@@ -5,8 +5,8 @@ halve (xs) = (take n xs, drop n xs)
 -- ex 2
 third :: [a] -> a
 -- third xs = head (tail (tail xs))
--- third xs = xs !! 3
-third (_:(_:(x:_))) = x
+third xs = xs !! 2
+--third (_:_:x:_) = x
 
 -- ex 3
 safetail :: [a] -> [a]
