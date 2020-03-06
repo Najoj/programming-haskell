@@ -1,6 +1,6 @@
 1. Using a list comprehension, give an expression that calculates the sum 1<sup>2</sup> + 2<sup>2</sup> + ... 100<sup>2</sup> of the first one hundred integer squares.
   * ```haskell
-    [x^2 | x <- [1..100]]
+    sum [x^2 | x <- [1..100]]
     ```
 
 2. Suppose that a *coordinate grid* of size *m × n* is given by the list of all pairs *(x,y)* of integers such that *0 ≤ x ≤ m* and *0 ≤ y ≤ n*. Using a list comprehension, define a function `grid :: Int -> Int -> [(Int,Int)]` that returns a coordinate grid of a given size. For example:
