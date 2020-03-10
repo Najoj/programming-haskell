@@ -56,16 +56,14 @@
 
   * ```haskell
     perfects :: Int -> [Int]
-    perfects n = [x <- [1..x],
+    perfects n = [x <- [1..n],
                        sum (init (factors x)) == x]
     ```
 
 7. Show how the list of comprehensions `[(x,y) | x <- [1,2], y <- [3,4]]` with two generators can be re-expressed using two comprehensions with single generators. Hint: nest one comprehension within the other and make use of the library function `cancat :: [[a]] -> [a]`.
 
   * ```haskell
-    -- Not quite sure this is what the author wanted
-    f n = [(x,n) | x <- [1,2]]
-    concat [f 3, f 4]
+    [[ (x,y) | x <- [1,2]] | y <- [3,4] ]
     ```
 
 8. Redefine the function `positions` using the function `find`.
