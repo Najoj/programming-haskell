@@ -17,7 +17,7 @@ positions :: Eq a => a -> [a] -> [Int]
 positions x xs = [i | (x', i) <- zip xs [0..], x == x']
 
 -- length of alphabet
-diff = (ord 'z' - ord 'a') + 1
+diff = length table
 
 -- 
 let2int :: Char -> Int
