@@ -30,23 +30,23 @@
 6. Without looking at the definitions from the standard prelude, define the following library functions on lists using recursion.
     a. Decide if all logical values in the list are `True`:
 
-       ```and :: [Bool] -> Bool```
+    ```and :: [Bool] -> Bool```
 
     b. Concatenate a list of lists: 
 
-       ```concat :: [[a]] -> [a]```
+    ```concat :: [[a]] -> [a]```
 
     c. Produce a list with `n` identical elements:
 
-       ```replicate :: Int -> a -> [a]```
+    ```replicate :: Int -> a -> [a]```
 
     d. Select the `n`th element of a list:
 
-       ```(!!) :: [a] -> Int -> a```
+    ```(!!) :: [a] -> Int -> a```
 
     e. Decide if a value is an element of a list:
 
-       ```elem :: Eq a => a -> [a] -> Bool```
+    ```elem :: Eq a => a -> [a] -> Bool```
 
    Note: most of these functions are defined in the prelude using other library functions rather than using explicit recursion, and are generic functions rather than being specified to the type of lists.
   * ```haskell
