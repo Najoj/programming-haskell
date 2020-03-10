@@ -54,4 +54,13 @@ I will do the exercises with
     1. The Caesar cipher
     1. Chapter remarks
     1. Exercises
+6. Recursive functions
+    1. Basic concepts
+    1. Recursion on lists
+    1. Multiple arguments
+    1. Multiple recursion
+    1. Mutual recursion
+    1. Advice on recursion
+    1. Chapter remarks
+    1. Exercises
 
