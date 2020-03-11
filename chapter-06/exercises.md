@@ -28,6 +28,7 @@
     ```
 
 6. Without looking at the definitions from the standard prelude, define the following library functions on lists using recursion.
+
     a. Decide if all logical values in the list are `True`:
 
     ```and :: [Bool] -> Bool```
