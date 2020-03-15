@@ -63,4 +63,14 @@ I will do the exercises with
     1. Advice on recursion
     1. Chapter remarks
     1. Exercises
+7. Higher-order functions
+    1. Basic concepts
+    1. Processing lists
+    1. The `foldr` function
+    1. The `foldl` function
+    1. The composition operator
+    1. Binary string transmitter
+    1. Voting algorithms
+    1. Chapter remarks
+    1. Exercises
 
