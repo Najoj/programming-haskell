@@ -5,4 +5,4 @@ html: $(MD)
 	pandoc $(MD) -o markdown.html
 
 pdf: $(MD)
-	pandoc  --pdf-engine=xelatex $(MD) -o markdown.pdf
+	pandoc  $(MD) -o markdown.pdf
