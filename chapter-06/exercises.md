@@ -18,7 +18,7 @@
   * ```haskell
     (^) :: Int -> Int -> Int
     (^) _ 0 = 1
-    (^) b e = b * b*(n-1)
+    (^) b n = b * b*(n-1)
     ```
     ```
     Execution:
