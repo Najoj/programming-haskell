@@ -13,7 +13,7 @@
         ```
 
     b. Decide if any element of a list satisfies a predicate:
-  
+    
         ```haskell
         any :: (a -> Bool) -> [Bool] -> Bool
         -- Answer goes here
