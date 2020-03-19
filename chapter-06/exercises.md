@@ -18,7 +18,7 @@
   * ```haskell
     (^) :: Int -> Int -> Int
     (^) _ 0 = 1
-    (^) b n = b * b*(n-1)
+    (^) b n = b * b^(n-1)
     ```
     ```
     Execution:
@@ -39,6 +39,8 @@
     ```
   * ```haskell
     euclid :: Int -> Int -> Int
+    euclid n 0 = n
+    euclid 0 m = m
     euclid n m | n == m = n
                | n > m  = euclid (n-m) m
                | otherwise  = euclid n (m-n)
@@ -55,11 +57,13 @@
     = 1 + (1 + (1))
     = 1 + (2)
     = 3
+    
       drop 3 [1,2,3,4,5]
     = drop 2 [2,3,4,5]
     = drop 1 [3,4,5]
     = drop 0 [4,5]
     = [4,5]
+
       init [1,2,3]
     = 1 : init [2,3]
     = 1 : 2 : init [3]
@@ -111,7 +115,7 @@
     elem e' (e:es) = if e' == e then True else elem e' es
     ```
 
-   Note: most of these functions are defined in the prelude using other library functions rather than using explicit recursion, and are generic functions rather than being specified to the type of lists.
+    Note: most of these functions are defined in the prelude using other library functions rather than using explicit recursion, and are generic functions rather than being specified to the type of lists.
   * *Answers are in the question*
   
   7. Define a recursive function `merge :: Ord a => [a] -> [a] -> [a]` that merges two sorted lists to give a single sorted list. For example:
@@ -120,6 +124,7 @@
     > merge [2,5,6] [1,3,4]
     [1,2,3,4,5,6]
     ```
+
   * ```haskell
     merge :: Ord a => [a] -> [a] -> [a]
     merge [] bs = bs
