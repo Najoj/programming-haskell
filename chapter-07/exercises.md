@@ -1,4 +1,5 @@
 1. Show how the list comprehension of `[f x | x <- xs, p x]` can be re-expressed using the higher-order functions `map` and `filter`.
+
   * ```haskell
     -- Answer goes here
     ```
@@ -7,31 +8,31 @@
 
     a. Decide if all elements of a list satisfy the predicate:
 
-        ```haskell
-        all :: (a -> Bool) -> [Bool] -> Bool
-        -- Answer goes here
-        ```
+    ```haskell
+    all :: (a -> Bool) -> [Bool] -> Bool
+    -- Answer goes here
+    ```
 
     b. Decide if any element of a list satisfies a predicate:
     
-        ```haskell
-        any :: (a -> Bool) -> [Bool] -> Bool
-        -- Answer goes here
-        ```
+    ```haskell
+    any :: (a -> Bool) -> [Bool] -> Bool
+    -- Answer goes here
+    ```
 
     c. Select elements from a list while they satisfy a predicate:
 
-        ```haskell
-        takeWhile :: (a -> Bool) -> [a] -> a
-        -- Answer goes here
-        ```
+    ```haskell
+    takeWhile :: (a -> Bool) -> [a] -> a
+    -- Answer goes here
+    ```
 
     d. Remove elements from a list while they satisfy a predicate:
 
-        ```haskell
-        dropWhile :: (a -> Bool) -> [a] -> a
-        -- Answer goes here
-        ```
+    ```haskell
+    dropWhile :: (a -> Bool) -> [a] -> a
+    -- Answer goes here
+    ```
 
     Note: in the prelude the first two of these functions are generic functions rather than being spekifik to the type of lists.
 
