@@ -38,9 +38,9 @@
 
 3. Redefine the functions `map f` and `filter p` using `foldr`.
 
-    * ```haskell
-    -- Answer goes here
-    ```
+  * ```haskell
+  -- Answer goes here
+  ```
 
 4. Using `foldl`q define a function `dec2int :: [Int] -> Int` that converts a decimal number into an integer. For example:
 
@@ -49,9 +49,9 @@
     2345
     ```
 
-    * ```haskell
-    -- Answer goes here
-    ```
+  * ```haskell
+  -- Answer goes here
+  ```
 
 5. Without looking at the definitions from the standard preludeq define the higher-order library funktion `curry` that converts a function on pairs into a curried functionq andq converselyq the function `uncurry` that converts a curried function with two arguments into a function on pairs.
 

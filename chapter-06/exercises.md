@@ -119,7 +119,6 @@
   * *Answers are in the question*
   
   7. Define a recursive function `merge :: Ord a => [a] -> [a] -> [a]` that merges two sorted lists to give a single sorted list. For example:
-
     ```
     > merge [2,5,6] [1,3,4]
     [1,2,3,4,5,6]
