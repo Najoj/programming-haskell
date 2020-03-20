@@ -20,41 +20,46 @@
 
     a. Decide if all elements of a list satisfy the predicate:
 
-        ```haskell
-        all :: (a -> Bool) -> [Bool] -> Bool
-        -- Answer goes here
-        ```
+    ```haskell
+    all :: (a -> Bool) -> [Bool] -> Bool
+    all pr xs = foldr (&&) True (map pr xs)    
+    ```
 
     b. Decide if any element of a list satisfies a predicate:
     
-        ```haskell
-        any :: (a -> Bool) -> [Bool] -> Bool
-        -- Answer goes here
-        ```
+    ```haskell
+    any :: (a -> Bool) -> [Bool] -> Bool
+    all pr xs = foldr (||) True (map pr xs)    
+    ```
 
     c. Select elements from a list while they satisfy a predicate:
 
-        ```haskell
-        takeWhile :: (a -> Bool) -> [a] -> a
-        -- Answer goes here
-        ```
+    ```haskell
+    takeWhile :: (a -> Bool) -> [a] -> [a]
+    takeWhile  _ [] = []
+    takeWhile pr (x:xs) | pr x      = x : (takeWhile pr xs)
+                        | otherwise = []
+
+    ```
 
     d. Remove elements from a list while they satisfy a predicate:
 
-        ```haskell
-        dropWhile :: (a -> Bool) -> [a] -> a
-        -- Answer goes here
-        ```
+    ```haskell
+    dropWhile :: (a -> Bool) -> [a] -> [a]
+    dropWhile  _ [] = []
+    dropWhile pr (x:xs) | pr x      = x : (dropWhile pr xs)
+                        | otherwise = x : xs
+    ```
 
     Note: in the prelude the first two of these functions are generic functions rather than being spekifik to the type of lists.
 
-    * *Answers in exercise.*
+   * *Answers in exercise.*
 
 3. Redefine the functions `map f` and `filter p` using `foldr`.
 
-    * ```haskell
-    -- Answer goes here
-    ```
+  * ```haskell
+  -- Answer goes here
+  ```
 
 4. Using `foldl`q define a function `dec2int :: [Int] -> Int` that converts a decimal number into an integer. For example:
 
@@ -63,7 +68,7 @@
     2345
     ```
 
-    * ```haskell
+  * ```haskell
     -- Answer goes here
     ```
 
