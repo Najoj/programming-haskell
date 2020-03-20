@@ -29,7 +29,7 @@
     
     ```haskell
     any :: (a -> Bool) -> [Bool] -> Bool
-    all pr xs = foldr (||) True (map pr xs)    
+    any pr xs = foldr (||) True (map pr xs)
     ```
 
     c. Select elements from a list while they satisfy a predicate:
@@ -57,9 +57,9 @@
 
 3. Redefine the functions `map f` and `filter p` using `foldr`.
 
-  * ```haskell
-  -- Answer goes here
-  ```
+    * ```haskell
+    -- Answer goes here
+    ```
 
 4. Using `foldl`q define a function `dec2int :: [Int] -> Int` that converts a decimal number into an integer. For example:
 
