@@ -1,46 +1,60 @@
 1. Show how the list comprehension of `[f x | x <- xs, p x]` can be re-expressed using the higher-order functions `map` and `filter`.
 
   * ```haskell
-    -- Answer goes here
+    map f (filter p xs)
+    ```
+
+    Example run:
+
+    ```
+    Prelude> f = (+4)
+    Prelude> p = (>3)
+    Prelude> xs = [1..10]
+    Prelude> [f x | x <- xs, p x]
+    [8,9,10,11,12,13,14]
+    Prelude> map f (filter p xs)
+    [8,9,10,11,12,13,14]
     ```
 
 2. Without looking at the definitions from the standard preludeq define the following higher-order library functions on lists
 
     a. Decide if all elements of a list satisfy the predicate:
 
-    ```haskell
-    all :: (a -> Bool) -> [Bool] -> Bool
-    -- Answer goes here
-    ```
+        ```haskell
+        all :: (a -> Bool) -> [Bool] -> Bool
+        -- Answer goes here
+        ```
 
     b. Decide if any element of a list satisfies a predicate:
     
-    ```haskell
-    any :: (a -> Bool) -> [Bool] -> Bool
-    -- Answer goes here
-    ```
+        ```haskell
+        any :: (a -> Bool) -> [Bool] -> Bool
+        -- Answer goes here
+        ```
 
     c. Select elements from a list while they satisfy a predicate:
 
-    ```haskell
-    takeWhile :: (a -> Bool) -> [a] -> a
-    -- Answer goes here
-    ```
+        ```haskell
+        takeWhile :: (a -> Bool) -> [a] -> a
+        -- Answer goes here
+        ```
 
     d. Remove elements from a list while they satisfy a predicate:
 
-    ```haskell
-    dropWhile :: (a -> Bool) -> [a] -> a
-    -- Answer goes here
-    ```
+        ```haskell
+        dropWhile :: (a -> Bool) -> [a] -> a
+        -- Answer goes here
+        ```
 
     Note: in the prelude the first two of these functions are generic functions rather than being spekifik to the type of lists.
 
+    * *Answers in exercise.*
+
 3. Redefine the functions `map f` and `filter p` using `foldr`.
 
-  * ```haskell
-  -- Answer goes here
-  ```
+    * ```haskell
+    -- Answer goes here
+    ```
 
 4. Using `foldl`q define a function `dec2int :: [Int] -> Int` that converts a decimal number into an integer. For example:
 
@@ -49,9 +63,9 @@
     2345
     ```
 
-  * ```haskell
-  -- Answer goes here
-  ```
+    * ```haskell
+    -- Answer goes here
+    ```
 
 5. Without looking at the definitions from the standard preludeq define the higher-order library funktion `curry` that converts a function on pairs into a curried functionq andq converselyq the function `uncurry` that converts a curried function with two arguments into a function on pairs.
 
@@ -96,10 +110,10 @@ Hint: the library function `error :: String -> a` displays the given sting as an
 
 9. Define a function `altMap :: (a -> b) -> (a -> b) -> [a] -> [b]` that alternately applies its two argument functions to successive elements in a list, in turn about order. For example:
 
-```
-> altMap (+10) (+100) [0,1,2,3,4]
-[10,101,12,103,14]
-```
+    ```
+    > altMap (+10) (+100) [0,1,2,3,4]
+    [10,101,12,103,14]
+    ```
   * ```haskell
     -- Answer goes here
     ```
