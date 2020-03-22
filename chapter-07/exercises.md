@@ -57,8 +57,8 @@
 3. Redefine the functions `map f` and `filter p` using `foldr`.
 
   * ```haskell
-    map f   = foldr (\x xs -> f x : xs) []
-    filer p = foldr (\x xs -> if p x then x:xs else xs) []
+    map f    = foldr (\x xs -> f x : xs) []
+    filter p = foldr (\x xs -> if p x then x:xs else xs) []
     ```
 
 4. Using `foldl`, define a function `dec2int :: [Int] -> Int` that converts a decimal number into an integer. For example:
