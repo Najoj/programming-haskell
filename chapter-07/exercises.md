@@ -69,7 +69,8 @@
     ```
 
   * ```haskell
-    -- Answer goes here
+    dec2int :: [Int] -> Int
+    dec2int = foldl (\x y -> 10*x + y) 0
     ```
 
 5. Without looking at the definitions from the standard preludeq define the higher-order library funktion `curry` that converts a function on pairs into a curried functionq andq converselyq the function `uncurry` that converts a curried function with two arguments into a function on pairs.
