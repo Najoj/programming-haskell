@@ -53,12 +53,13 @@
 
     Note: in the prelude the first two of these functions are generic functions rather than being spekifik to the type of lists.
 
-   * *Answers in exercise.*
+    * *Answers in exercise.*
 
 3. Redefine the functions `map f` and `filter p` using `foldr`.
 
     * ```haskell
-    -- Answer goes here
+    map f   = foldr (\x xs -> f x : xs) []
+    filer p = foldr (\x xs -> if p x then x:xs else xs) []
     ```
 
 4. Using `foldl`q define a function `dec2int :: [Int] -> Int` that converts a decimal number into an integer. For example:
