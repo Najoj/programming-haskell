@@ -57,7 +57,7 @@
 
 3. Redefine the functions `map f` and `filter p` using `foldr`.
 
-    * ```haskell
+  * ```haskell
     map f   = foldr (\x xs -> f x : xs) []
     filer p = foldr (\x xs -> if p x then x:xs else xs) []
     ```
