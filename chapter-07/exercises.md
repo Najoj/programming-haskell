@@ -54,7 +54,7 @@
 
     * *Answers in exercise.*
 
-3. Redefine the functions map f and filter p using foldr.
+3. Redefine the functions `map f` and `filter p` using `foldr`.
 
     * ```haskell
     map f   = foldr (\x xs -> f x : xs) []
@@ -68,7 +68,7 @@
     2345
     ```
 
-    * ```haskell
+  * ```haskell
     -- Answer goes here
     ```
 
