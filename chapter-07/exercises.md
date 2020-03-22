@@ -46,7 +46,7 @@
     ```haskell
     dropWhile :: (a -> Bool) -> [a] -> [a]
     dropWhile  _ [] = []
-    dropWhile pr (x:xs) | pr x      = x : (dropWhile pr xs)
+    dropWhile pr (x:xs) | pr x      = (dropWhile pr xs)
                         | otherwise = x : xs
     ```
 
