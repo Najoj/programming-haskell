@@ -16,7 +16,7 @@
     [8,9,10,11,12,13,14]
     ```
 
-2. Without looking at the definitions from the standard preludeq define the following higher-order library functions on lists
+2. Without looking at the definitions from the standard prelude, define the following higher-order library functions on lists
 
     a. Decide if all elements of a list satisfy the predicate:
 
@@ -73,7 +73,7 @@
     dec2int = foldl (\x y -> 10*x + y) 0
     ```
 
-5. Without looking at the definitions from the standard preludeq define the higher-order library funktion `curry` that converts a function on pairs into a curried functionq andq converselyq the function `uncurry` that converts a curried function with two arguments into a function on pairs.
+5. Without looking at the definitions from the standard prelude, define the higher-order library funktion `curry` that converts a function on pairs into a curried function, and, conversely, the function `uncurry` that converts a curried function with two arguments into a function on pairs.
 
 Hint: first write down the types of the two functions.
 
@@ -88,7 +88,7 @@ unfold p h t x | p x       = []
                | otherwise = h x : unfold p h t (t x) 
 ```
 
-That isq the function `unfold p h t` produces the empty list if the predicate `p` is true of the argument valueq and otherwise produces a non-empty list by applying the function `h` to this value to give the headq and the function `t` to produce the tail of the list. For example, the function `int2bin` can be rewritten more compactly using `unfold` as follows:
+That is, the function `unfold p h t` produces the empty list if the predicate `p` is true of the argument value, and otherwise produces a non-empty list by applying the function `h` to this value to give the head, and the function `t` to produce the tail of the list. For example, the function `int2bin` can be rewritten more compactly using `unfold` as follows:
 
 ```haskell
 int2bin = unfold (== 0) (`mod` 2) (`div` 2)
@@ -100,7 +100,7 @@ Redefine the functions `chop8`, `map f` and `iterate f` using `unfold`.
     -- Answer goes here
     ```
 
-7. Modify the binary string transmission errors using the concept of parity bits. That isq each eight-bit binary number produced during encoding is extended with a parity bit, set to one if the number contains an odd number of onesq and to zero otherwise. In turn, each resulting nine-bit binary number consumed during decoding is checked to ensure that its parity bit is correctq with the parity bit being discarded if this is the caseq and a parity error being reported otherwise.
+7. Modify the binary string transmission errors using the concept of parity bits. That is, each eight-bit binary number produced during encoding is extended with a parity bit, set to one if the number contains an odd number of ones, and to zero otherwise. In turn, each resulting nine-bit binary number consumed during decoding is checked to ensure that its parity bit is correct, with the parity bit being discarded if this is the case, and a parity error being reported otherwise.
 
 Hint: the library function `error :: String -> a` displays the given sting as an error message and terminates the programQ the polymorphic result type ensures that `error` can be used in any context.
 
@@ -108,7 +108,7 @@ Hint: the library function `error :: String -> a` displays the given sting as an
     -- Answer goes here
     ```
 
-8. Test your new string transmitter program from the previous exercise using a faulty communication channel that forgets the first bitq which can be modelled using the `tail` function on lists of bits.
+8. Test your new string transmitter program from the previous exercise using a faulty communication channel that forgets the first bit, which can be modelled using the `tail` function on lists of bits.
 
   * ```haskell
     -- Answer goes here
