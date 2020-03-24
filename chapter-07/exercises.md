@@ -112,7 +112,7 @@
 
 7. Modify the binary string transmission errors using the concept of parity bits. That is, each eight-bit binary number produced during encoding is extended with a parity bit, set to one if the number contains an odd number of ones, and to zero otherwise. In turn, each resulting nine-bit binary number consumed during decoding is checked to ensure that its parity bit is correct, with the parity bit being discarded if this is the case, and a parity error being reported otherwise.
 
-Hint: the library function `error :: String -> a` displays the given sting as an error message and terminates the programQ the polymorphic result type ensures that `error` can be used in any context.
+Hint: the library function `error :: String -> a` displays the given sting as an error message and terminates the program; the polymorphic result type ensures that `error` can be used in any context.
 
   * ```haskell
     -- Answer goes here
