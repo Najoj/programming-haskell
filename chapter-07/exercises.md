@@ -50,7 +50,7 @@
                         | otherwise = x : xs
     ```
 
-    Note: in the prelude the first two of these functions are generic functions rather than being spekifik to the type of lists.
+    Note: in the prelude the first two of these functions are generic functions rather than being specific to the type of lists.
 
   * *Answers in exercise.*
 
@@ -73,7 +73,7 @@
     dec2int = foldl (\x y -> 10*x + y) 0
     ```
 
-5. Without looking at the definitions from the standard prelude, define the higher-order library funktion `curry` that converts a function on pairs into a curried function, and, conversely, the function `uncurry` that converts a curried function with two arguments into a function on pairs.
+5. Without looking at the definitions from the standard prelude, define the higher-order library function `curry` that converts a function on pairs into a curried function, and, conversely, the function `uncurry` that converts a curried function with two arguments into a function on pairs.
 
     Hint: first write down the types of the two functions.
 
@@ -84,7 +84,7 @@
     uncurry f = \(a,b) -> f a b
     ```
 
-6. A higher-order funktion `unfold` that encapsulates a simple pattern of recursion for producing a list can be defined as follows:
+6. A higher-order function `unfold` that encapsulates a simple pattern of recursion for producing a list can be defined as follows:
 
     ```haskell
     unfold p h t x | p x       = []
@@ -112,7 +112,7 @@
 
 7. Modify the binary string transmission errors using the concept of parity bits. That is, each eight-bit binary number produced during encoding is extended with a parity bit, set to one if the number contains an odd number of ones, and to zero otherwise. In turn, each resulting nine-bit binary number consumed during decoding is checked to ensure that its parity bit is correct, with the parity bit being discarded if this is the case, and a parity error being reported otherwise.
 
-Hint: the library function `error :: String -> a` displays the given sting as an error message and terminates the program; the polymorphic result type ensures that `error` can be used in any context.
+    Hint: the library function `error :: String -> a` displays the given sting as an error message and terminates the program; the polymorphic result type ensures that `error` can be used in any context.
 
   * ```haskell
     -- Answer goes here
@@ -134,7 +134,7 @@ Hint: the library function `error :: String -> a` displays the given sting as an
     -- Answer goes here
     ```
 
-10. Using `altMap`, define a function `luhn :: [Int] -> Bool` that implements the *Luhn algorithm* from the exerkises in chapter 4 for bank card numbers of any length. Test your new function using your own bank card.
+10. Using `altMap`, define a function `luhn :: [Int] -> Bool` that implements the *Luhn algorithm* from the exercises in chapter 4 for bank card numbers of any length. Test your new function using your own bank card.
   * ```haskell
     -- Answer goes here
     ```
