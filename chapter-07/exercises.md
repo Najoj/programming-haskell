@@ -131,7 +131,15 @@
     [10,101,12,103,14]
     ```
   * ```haskell
-    -- Answer goes here
+    altMap :: (a -> b) -> (a -> b) -> [a] -> [b]
+    altMap _ _ []  = []
+    altMap f _ [l] = [f l]
+    altMap f s ls  = f x : (s y : altMap f s z)
+        where
+            x =  head ls
+            y = (head.tail) ls
+            z = (tail.tail) ls
+                            
     ```
 
 10. Using `altMap`, define a function `luhn :: [Int] -> Bool` that implements the *Luhn algorithm* from the exercises in chapter 4 for bank card numbers of any length. Test your new function using your own bank card.

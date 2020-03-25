@@ -33,3 +33,14 @@ map f = unfold null (f.head) tail
 
 iterate :: (a->a) -> a -> [a]
 iterate f = unfold (\_ -> False) (\x -> x) (f)
+
+-- ex 9
+altMap :: (a -> b) -> (a -> b) -> [a] -> [b]
+altMap _ _ []  = []
+altMap f _ [l] = [f l]
+altMap f s ls  = f x : (s y : altMap f s z)
+        where
+                x =  head ls
+                y = (head.tail) ls
+                z = (tail.tail) ls
+                            
