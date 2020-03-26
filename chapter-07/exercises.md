@@ -138,6 +138,8 @@
 
 10. Using `altMap`, define a function `luhn :: [Int] -> Bool` that implements the *Luhn algorithm* from the exercises in chapter 4 for bank card numbers of any length. Test your new function using your own bank card.
   * ```haskell
-    -- Answer goes here
+    luhn :: [Int] -> Bool
+    luhn = (==0) . (`mod` 10) . sum . altMap
+           (\x -> if 2*x > 9 then 2*x-9 else 2*x) (\x -> x)
     ```
 

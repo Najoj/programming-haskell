@@ -44,9 +44,14 @@ altMap f s ls  = f x : (s y : altMap f s z)
                 y = ls !! 1
                 z = (tail.tail) ls
 
-        {-
 -- ex 10
 luhn :: [Int] -> Bool
+luhn = (==0).
+        (`mod` 10).
+        sum.
+        altMap (\x -> if 2*x > 9 then 2*x-9 else 2*x) (\x -> x)
+
+{-
 luhn number = sum `mod` 10 == 0
         where
             sum = a+b
