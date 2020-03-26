@@ -2,6 +2,8 @@
 
   * ```haskell
     map f (filter p xs)
+    -- or
+    map f . filter p xs
     ```
 
     Example run:
