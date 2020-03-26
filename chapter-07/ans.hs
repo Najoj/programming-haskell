@@ -40,7 +40,26 @@ altMap _ _ []  = []
 altMap f _ [l] = [f l]
 altMap f s ls  = f x : (s y : altMap f s z)
         where
-                x =  head ls
-                y = (head.tail) ls
+                x = ls !! 0
+                y = ls !! 1
                 z = (tail.tail) ls
-                            
+
+        {-
+-- ex 10
+luhn :: [Int] -> Bool
+luhn number = sum `mod` 10 == 0
+        where
+            sum = a+b
+            a = sum.altMap (luhnDouble) (\x -> x) (take 2 number)
+            b = sum.altMap (luhnDouble) (\x -> x) (drop 2 (take 4 number))
+--luhn a b c d = sum `mod` 10 == 0
+--    where
+--            sum = aD + b + cD + d
+--            aD = luhnDouble a
+--            cD = luhnDouble c
+luhnDouble :: Int -> Int
+luhnDouble x = if a > 9 then a-9 else a
+                where
+                    a = 2*x
+
+-}

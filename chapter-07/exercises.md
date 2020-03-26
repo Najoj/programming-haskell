@@ -29,7 +29,7 @@
     
     ```haskell
     any :: (a -> Bool) -> [Bool] -> Bool
-    any pr xs = foldr (||) True (map pr xs)
+    any pr xs = foldr (||) False (map pr xs)
     ```
 
     c. Select elements from a list while they satisfy a predicate:
@@ -133,13 +133,7 @@
   * ```haskell
     altMap :: (a -> b) -> (a -> b) -> [a] -> [b]
     altMap _ _ []  = []
-    altMap f _ [l] = [f l]
-    altMap f s ls  = f x : (s y : altMap f s z)
-        where
-            x =  head ls
-            y = (head.tail) ls
-            z = (tail.tail) ls
-                            
+    altMap f s (x:xs)  = f x : altMap s f xs
     ```
 
 10. Using `altMap`, define a function `luhn :: [Int] -> Bool` that implements the *Luhn algorithm* from the exercises in chapter 4 for bank card numbers of any length. Test your new function using your own bank card.
