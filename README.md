@@ -73,4 +73,14 @@ I will do the exercises with
     1. Voting algorithms
     1. Chapter remarks
     1. Exercises
+8. Declaring types and classes
+    1. Type declaration
+    1. Data declarations
+    1. Newtype declarations
+    1. Recursive types
+    1. Class and instance declarations
+    1. Tautology checker
+    1. Abstract machine
+    1. Chapter remarks
+    1. Exercises
 
