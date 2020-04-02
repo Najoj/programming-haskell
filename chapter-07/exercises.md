@@ -116,15 +116,11 @@
 
     Hint: the library function `error :: String -> a` displays the given sting as an error message and terminates the program; the polymorphic result type ensures that `error` can be used in any context.
 
-  * ```haskell
-    -- Answer goes here
-    ```
+  * See [binary-transmitter.hs](./binary-transmitter.hs)
 
 8. Test your new string transmitter program from the previous exercise using a faulty communication channel that forgets the first bit, which can be modelled using the `tail` function on lists of bits.
 
-  * ```haskell
-    -- Answer goes here
-    ```
+  * See [binary-transmitter.hs](./binary-transmitter.hs)
 
 9. Define a function `altMap :: (a -> b) -> (a -> b) -> [a] -> [b]` that alternately applies its two argument functions to successive elements in a list, in turn about order. For example:
 
