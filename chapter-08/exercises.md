@@ -3,7 +3,9 @@
     Hint: make use of `add` in your definition.
 
   * ```haskell
-    -- Answer goes here
+    mult :: Nat -> Nat -> Nat
+    mult m Zero     = Zero
+    mult m (Succ n) = add m (mult m n)
     ```
 
 2. Although not included in appendix B, the standard prelude defines
@@ -16,9 +18,14 @@
 
     that decides if one value in an ordered type is less than (`LT`), equal to (`EQ`), or greater than (`GT`) another value. Using this function, redefine the function `occurs :: Ord a => a -> Tree a -> Bool` for search trees. Why is this new definition more efficient than the original version? 
 
-  * ```haskell
-    -- Answer goes here
+  * I suppose it's because trees are better.
+
+    ```haskell
+    occurs :: Ord a => a -> Tree a -> Bool
+    occurs a (Leaf a)           = True
+    occurs a (Node tree1 tree2) = (occurs a tree1) or (occurs a tree2)
     ```
+
 
 3. Consider the following type of binary trees:
 
@@ -29,13 +36,25 @@
     Hint: first define a function that returns the number of leaves in a tree.
 
   * ```haskell
-    -- Answer goes here
+    balanced :: Tree a -> Bool
+    balanaced (Leaf _)        = True
+    balanced (Node treea treeb) = leaves treea == leaves treeb
+    
+    leaves :: Tree a -> Int
+    leaves (Leaf a) = 1
+    leaves (Node tree1 tree2) = (leaves tree1) + (leaves tree2)
     ```
 
 4. Define a function `balance :: [a] -> Tree a` that converts a non-empty list into a balanced tree. Hint: first define a function that splits a list into two halves whose length differs by at most one.
 
   * ```haskell
-    -- Answer goes here
+    balance :: [a] -> Tree a
+    balance (a:[]) = Leaf a
+    balance xs = Node (ta) (tb)
+                   where
+                     (xa, xb) = halve xs
+                     ta = balance xa
+                     tb = balance xb
     ```
 
 5. Given the type declaration
@@ -61,7 +80,7 @@
 7. Complete the following instance declarations:
 
   
-          instance Eq a => Eq (Waybe a) where
+          instance Eq a => Eq (Maybe a) where
             ...
 
           instance Eq a => Eq [a] where
