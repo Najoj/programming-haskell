@@ -41,7 +41,7 @@
   * ```haskell
     balanced :: Tree a -> Bool
     balanaced (Leaf _)        = True
-    balanced (Node treea treeb) = leaves treea == leaves treeb
+    balanced (Node treea treeb) = abs(leaves treea - leaves treeb) <= 1
     
     leaves :: Tree a -> Int
     leaves (Leaf a) = 1
