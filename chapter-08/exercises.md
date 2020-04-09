@@ -22,8 +22,11 @@
 
     ```haskell
     occurs :: Ord a => a -> Tree a -> Bool
-    occurs a (Leaf a)           = True
-    occurs a (Node tree1 tree2) = (occurs a tree1) or (occurs a tree2)
+    occurs x (Leaf y)     = x == y
+    occurs x (Node l y r) = case compare x y of
+                     LT -> occurs x l
+                     GT -> occurs x r
+                     EQ -> True
     ```
 
 
@@ -80,7 +83,7 @@
 7. Complete the following instance declarations:
 
   
-          instance Eq a => Eq (Maybe a) where
+          instance Eq a => Eq (Waybe a) where
             ...
 
           instance Eq a => Eq [a] where
