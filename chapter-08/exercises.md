@@ -110,13 +110,9 @@
 
 8. Extend the tautology checker to support the use of logical disjunction (∨) and equivalence (⬄) in propositions.
 
-  * ```haskell
-    -- Answer goes here
-    ```
+  * See [tautologychecker.hs](./tautologychecker.hs)
 
 9. Extend the abstract machine to support the use of multiplications.
 
-  * ```haskell
-    -- Answer goes here
-    ```
+  * See [abstractmachine.hs](./abstractmachine.hs)
 
