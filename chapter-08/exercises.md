@@ -98,11 +98,13 @@
 
   * ```haskell
     instance Eq a => Eq (Maybe a) where
-        Just a == Just b = a == b
-        _ == _           = False    -- Maybe not needed ?
-        a /= b           = not (a == b)
+        Nothing == Nothing = a == b
+        Just a   == Just b = a == b
+        _ == _             = False    -- Maybe not needed ?
+        a /= b             = not (a == b)
 
     instance Eq a => Eq [a] where
+        [] == []          = True
         (a:as) == (b:bs)  = a == b and as == bs
         as /= bs          = not (as == bs)
         
