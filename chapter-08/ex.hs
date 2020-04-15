@@ -1,42 +1,18 @@
-module M where
+-- ex 5
+data Expr = Val Int | Add Expr Expr
 
-type Pos = (Int, Int)
-type Assoc k v = [(k,v)]
+folde :: (Int -> a) -> (a -> a -> a) -> Expr -> a
+folde f g (Val x)   = f x
+folde f g (Add x y) = g (folde f g x) (folde f g y)
 
---find :: Eq k => k -> Assoc k v -> v
---find k t = head [v| (k',v) <- t, k == k']
+-- ex 6
+eval :: Expr -> Int
+eval expr = folde (+0) (+) expr
 
-data Move = North | South | East | West
+size :: Expr -> Int
+size expr = folde (\_ -> 1) (+) expr
 
-move :: Move -> Pos -> Pos
-move North (x,y) = (x,y+1)
-move South (x,y) = (x,y-1)
-move East  (x,y) = (x+1,y)
-move West  (x,y) = (x-1,y)
-
-moves :: [Move] -> Pos -> Pos
-moves []     p = p
-moves (m:ms) p = moves ms (move m p)
-
--- data Maybe a = Nothing | Just a
-
-safediv :: Int -> Int -> Maybe Int
-safediv _ 0 = Nothing
-safediv m n = Just (m `div` n)
-
---newtype Nat = N Int
-
-data Nat = Zero | Succ Nat
-
-nat2int :: Nat -> Int
-nat2int Zero     = 0
-nat2int (Succ n) = 1 + nat2int n
-
-int2nat :: Int -> Nat
-int2nat 0 = Zero
-int2nat n = Succ (int2nat (n-1))
-
-class MEq a where
-        (M.==), (M./=) :: a -> a -> Bool
-        x M./= y = not (x M.== y)
-
+-- ex 7
+instance Eq a => Eq (Maybe a) where
+        Just a == Just b = a == b
+        _ == _           = False

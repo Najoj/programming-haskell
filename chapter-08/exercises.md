@@ -40,7 +40,7 @@
 
   * ```haskell
     balanced :: Tree a -> Bool
-    balanaced (Leaf _)        = True
+    balanaced (Leaf _)          = True
     balanced (Node treea treeb) = abs(leaves treea - leaves treeb) <= 1
     
     leaves :: Tree a -> Int
@@ -71,13 +71,20 @@
     such that `folde f g` replaces each `Val` constructor in an expression by the function `f`, and each `Add`constructor by the function `g`.
 
   * ```haskell
-    -- Answer goes here
+    folde :: (Int -> a) -> (a -> a -> a) -> Expr -> a
+    folde f g (Val x)   = f x
+    folde f g (Add x y) = g (folde f g x) (folde f g y)
+
     ```
 
 6. Using `folde`, define a function `eval :: Expr -> Int` that evaluates an expression to an integer value, and a function `size :: Expr -> Int ` that calculates the number of values in an expression.
 
   * ```haskell
-    -- Answer goes here
+    eval :: Expr -> Int
+    eval expr = folde (+0) (+) expr
+
+    size :: Expr -> Int
+    size expr = folde (\_ -> 1) (+) expr
     ```
 
 7. Complete the following instance declarations:
@@ -86,11 +93,19 @@
           instance Eq a => Eq (Waybe a) where
             ...
 
-          instance Eq a => Eq [a] where
+          instance Eq a => Eq ra] where
             ...
 
   * ```haskell
-    -- Answer goes here
+    instance Eq a => Eq (Maybe a) where
+        Just a == Just b = a == b
+        _ == _           = False    -- Maybe not needed ?
+        a /= b           = not (a == b)
+
+    instance Eq a => Eq [a] where
+        (a:as) == (b:bs)  = a == b and as == bs
+        as /= bs          = not (as == bs)
+        
     ```
 
 8. Extend the tautology checker to support the use of logical disjunction (∨) and equivalence (⬄) in propositions.
