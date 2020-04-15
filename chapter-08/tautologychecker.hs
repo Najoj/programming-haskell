@@ -4,6 +4,7 @@ data Prop = Const Bool
           | And Prop Prop
           | Imply Prop Prop
           | Disjunction Prop Prop
+          | Equiv Prop Prop
 
 type Assoc k v = [(k,v)]
 type Subst = Assoc Char Bool
@@ -30,6 +31,7 @@ eval s (And p q)         = eval s p && eval s q
 eval s (Imply p q)       = eval s p <= eval s q
 -- eval s (Disjunction p q) = eval s (Not (And p q)) -- perhaps
 eval s (Disjunction p q) = not (eval s p && eval s q)
+eval s (Equiv p q)       = not (eval s p) and (eval s q)
 
 vars :: Prop -> [Char]
 vars (Const _)         = []
@@ -38,6 +40,7 @@ vars (Not p)           = vars p
 vars (And p q)         = vars p ++ vars q
 vars (Imply p q)       = vars p ++ vars q
 vars (Disjunction p q) = vars p ++ vars q
+vars (Equiv p q)       = vars p ++ vars q
 
 bools :: Int -> [[Bool]]
 bools 0 = [[]]
