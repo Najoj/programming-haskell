@@ -81,26 +81,26 @@
 
   * ```haskell
     eval :: Expr -> Int
-    eval expr = folde (+0) (+) expr
+    eval expr = folde (id) (+) expr
 
     size :: Expr -> Int
-    size expr = folde (\_ -> 1) (+) expr
+    size expr = folde (const 1) (+) expr
     ```
 
 7. Complete the following instance declarations:
 
   
-          instance Eq a => Eq (Waybe a) where
+          instance Eq a => Eq (Maybe a) where
             ...
 
-          instance Eq a => Eq ra] where
+          instance Eq a => Eq [a] where
             ...
 
   * ```haskell
     instance Eq a => Eq (Maybe a) where
         Nothing == Nothing = a == b
-        Just a   == Just b = a == b
-        _ == _             = False    -- Maybe not needed ?
+        Just a  == Just b  = a == b
+        _ == _             = False 
         a /= b             = not (a == b)
 
     instance Eq a => Eq [a] where
