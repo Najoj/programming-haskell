@@ -31,7 +31,7 @@ eval s (And p q)    = eval s p && eval s q
 eval s (Imply p q)  = eval s p <= eval s q
 -- eval s (Or p q)  = eval s (Not (And p q)) -- perhaps
 eval s (Or p q)     = eval s p || eval s q
-eval s (Equiv p q)  = not (eval s p) and (eval s q)
+eval s (Equiv p q)  = not (eval s p) && (eval s q)
 
 vars :: Prop -> [Char]
 vars (Const _)      = []
