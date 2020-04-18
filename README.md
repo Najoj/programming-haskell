@@ -83,4 +83,17 @@ I will do the exercises with
     1. Abstract machine
     1. Chapter remarks
     1. Exercises
+9. The countdown problem
+    1. Introduction
+    1. Arithmetic operators
+    1. Numeric expressions
+    1. Combinatorial functions
+    1. Formalising the problem
+    1. Brute force solution
+    1. Performance testing
+    1. Combining generation and evaluation
+    1. Exploiting algebraic properties
+    1. Chapter remarks
+    1. Exercises
+
 
