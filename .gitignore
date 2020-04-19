@@ -1,4 +1,6 @@
+#Ignore all:
 *
+# Only allow these:
 !*.hs
 !*.md
 !*/
