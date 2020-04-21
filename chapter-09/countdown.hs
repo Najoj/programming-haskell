@@ -67,10 +67,17 @@ perms (x:xs) = concat (map (interleave x) (perms xs))
  -        ))
  -      = concat (map (interleave 1) ([[2]]))
  -      = concat ([interleave 1 [2]])
+ -      = concat [[[1,2],[2,1]]]
+ -      = [[1,2],[2,1]]
  -}
 
 choices :: [a] -> [[a]]
 choices = concat . map perms . subs
+
+-- ex 1
+choices' :: [a] -> [[a]]
+choices' l = [x | s <- subs l,
+                  x <- perms s]
 
 solution :: Expr -> [Int] -> Int -> Bool
 solution e ns n = elem (values e) (choices ns) && eval e == [n]
