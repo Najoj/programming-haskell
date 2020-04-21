@@ -33,6 +33,9 @@
     > length [i | ns' <- choices input, e <- exprs ns', i <- eval e]
     245644
     > -- not expectied ... -_-
+    > -- ok with the less good valid
+    > length [i | ns' <- choices input, e <- exprs ns', i <- eval e]
+    4672540
     ```
 
 5. Similarly, verify that the number of expressions that evaluate successfully increases to 10,839,369 if the numeric domain is generalised to arbitrary integers. Hint: modify the definition of `valid`.

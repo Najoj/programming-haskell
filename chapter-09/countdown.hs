@@ -19,9 +19,12 @@ instance Show Expr where
 
 
 valid :: Op -> Int -> Int -> Bool
+--valid Add x y = True
 valid Add x y = x <= y
 valid Sub x y = x > y
+--valid Mul x y = True
 valid Mul x y = x /= 1 && y /= 1 && x <= y
+--valid Div x y = x `mod` y == 0
 valid Div x y = y /= 1 && x `mod ` y == 0
 
 apply :: Op -> Int -> Int -> Int 
