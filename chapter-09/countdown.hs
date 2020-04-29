@@ -1,13 +1,14 @@
-type Result = (Expr, Int)
+type Result = (Expr, Integer)
 
-data Op = Add | Sub | Mul | Div
-data Expr = Val Int | App Op Expr Expr
+data Op = Add | Sub | Mul | Div | Exp
+data Expr = Val Integer | App Op Expr Expr
 
 instance Show Op where
         show Add = "+"
         show Sub = "-"
         show Mul = "*"
         show Div = "/"
+        show Exp = "^"
 
 instance Show Expr where
         show (Val n)     = show n
@@ -17,27 +18,38 @@ instance Show Expr where
                         brak e       = "(" ++ show e ++ ")"
 
 
-
-valid :: Op -> Int -> Int -> Bool
---valid Add x y = True
+valid :: Op -> Integer -> Integer -> Bool
 valid Add x y = x <= y
 valid Sub x y = x > y
---valid Mul x y = True
 valid Mul x y = x /= 1 && y /= 1 && x <= y
---valid Div x y = x `mod` y == 0
 valid Div x y = y /= 1 && x `mod ` y == 0
+valid Exp x y = True
 
-apply :: Op -> Int -> Int -> Int 
+valid' :: Op -> Integer -> Integer -> Bool
+valid' Add _ _ = True
+valid' Sub x y = x > y
+valid' Mul _ _ = True
+valid' Div x y = x `mod` y == 0
+valid' Exp _ _ = True
+
+apply :: Op -> Integer -> Integer -> Integer 
 apply Add x y = x + y
 apply Sub x y = x - y
 apply Mul x y = x * y
 apply Div x y = x `div` y
+apply Exp x y = x ^ y
 
-values :: Expr -> [Int]
+values :: Expr -> [Integer]
 values (Val n)     = [n]
 values (App _ l r) = values l ++ values r
 
-eval :: Expr -> [Int]
+
+eval' :: Expr -> [Integer]
+eval' (Val n)       = [n | n > 0]
+eval' (App o l r) = [apply o x y | x <- eval' l,
+                                   y <- eval' r,
+                                   valid' o x y]
+eval :: Expr -> [Integer]
 eval (Val n)       = [n | n > 0]
 eval (App o l r) = [apply o x y | x <- eval l,
                                   y <- eval r,
@@ -82,7 +94,7 @@ choices' :: [a] -> [[a]]
 choices' l = [x | s <- subs l,
                   x <- perms s]
 
-solution :: Expr -> [Int] -> Int -> Bool
+solution :: Expr -> [Integer] -> Integer -> Bool
 solution e ns n = elem (values e) (choices ns) && eval e == [n]
 
 split :: [a] -> [([a],[a])]
@@ -90,7 +102,7 @@ split []     = []
 split [_]    = []
 split (x:xs) = ([x], xs) : [(x:ls, rs) | (ls, rs) <- split xs]
 
-exprs :: [Int] -> [Expr]
+exprs :: [Integer] -> [Expr]
 exprs []  = []
 exprs [n] = [Val n]
 exprs ns  = [e | (ls, rs) <- split ns,
@@ -102,12 +114,12 @@ combine :: Expr -> Expr -> [Expr]
 combine l r = [App o l r | o <- ops]
 
 ops :: [Op]
-ops = [Add,Sub,Mul,Div]
+ops = [Add,Sub,Mul,Div,Exp]
 
-solutions :: [Int] -> Int -> [Expr]
+solutions :: [Integer] -> Integer -> [Expr]
 solutions ns n = [e | ns' <- choices ns, e <- exprs ns', eval e == [n]]
 
-results :: [Int] -> [Result]
+results :: [Integer] -> [Result]
 results [] = []
 results [n] = [(Val n,n) | n > 0]
 results ns = [res | (ls,rs) <- split ns,
@@ -119,10 +131,20 @@ combine' :: Result -> Result -> [Result]
 combine' (l,x) (r,y) = [(App o l r, apply o x y) | o <- ops,
                                                    valid o x y]
 
-solutions' :: [Int] -> Int -> [Expr]
+solutions' :: [Integer] -> Integer -> [Expr]
 solutions' ns n = [e | ns' <- choices ns, (e,m) <- results ns', m == n]
+
+solutions''  ns n   = near ns n n
+
+near ns n m = if null solution
+                 then near ns n (m+1)
+                 else solution
+                    where
+                        solution = near_solutions ns n m
+
+near_solutions ns n x = [e | ns' <- choices ns, (e,m) <- results ns', x == (m-n)]
 
 main :: IO ()
 --main = print (solutions [1,3,7,10,25,50] 765)
-main = print (solutions' [1,3,7,10,25,50] 765)
-
+main = print (solutions'' [1,3,7] 22)
+--main = print (solutions [1,3,7,10,25,50] 97656243896484031)

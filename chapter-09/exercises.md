@@ -52,6 +52,5 @@
 
    c. order the solutions using a suitable measure of simplicity.
 
-  * ```haskell
-    -- Answer goes here
-    ```
+  * See [countdown.hs](./countdown.hs)
+
