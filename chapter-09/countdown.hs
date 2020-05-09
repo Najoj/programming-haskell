@@ -23,7 +23,7 @@ valid Add x y = x <= y
 valid Sub x y = x > y
 valid Mul x y = x /= 1 && y /= 1 && x <= y
 valid Div x y = y /= 1 && x `mod ` y == 0
-valid Exp x y = True
+valid Exp x y = y /= 0 && x /= 1
 
 valid' :: Op -> Integer -> Integer -> Bool
 valid' Add _ _ = True
@@ -129,7 +129,7 @@ results ns = [res | (ls,rs) <- split ns,
 
 combine' :: Result -> Result -> [Result]
 combine' (l,x) (r,y) = [(App o l r, apply o x y) | o <- ops,
-                                                   valid o x y]
+                                                   valid' o x y]
 
 solutions' :: [Integer] -> Integer -> [Expr]
 solutions' ns n = [e | ns' <- choices ns, (e,m) <- results ns', m == n]
@@ -145,6 +145,6 @@ near ns n m = if null solution
 near_solutions ns n x = [e | ns' <- choices ns, (e,m) <- results ns', x == (m-n)]
 
 main :: IO ()
---main = print (solutions [1,3,7,10,25,50] 765)
+--main = print (solutions'' [1,3,7,10,25,50] 766)
 main = print (solutions'' [1,3,7] 22)
 --main = print (solutions [1,3,7,10,25,50] 97656243896484031)
