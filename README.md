@@ -95,5 +95,15 @@ I will do the exercises with
     1. Exploiting algebraic properties
     1. Chapter remarks
     1. Exercises
-
+10. Interactive programming
+    1. The problem
+    1. The solution
+    1. Basic actions
+    1. Sequencing
+    1. Derived primitives
+    1. Hangman
+    1. Nim
+    1. Life
+    1. Chapter remarks
+    1. Exercises
 
