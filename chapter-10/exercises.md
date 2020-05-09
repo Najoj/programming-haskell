@@ -40,7 +40,7 @@
     -- Answer goes here
     ```
 
-6. Using `getCh`, define an action `readlLine :: IO String` that behaves in the same way as `getLine`, except that it also permits the delete key to be used to remove charachters. Hint: the delet character is `'\DEL'`, and the control character for moving the crusor back one space is `'\b`'.
+6. Using `getCh`, define an action `readlLine :: IO String` that behaves in the same way as `getLine`, except that it also permits the delete key to be used to remove charachters. Hint: the delet character is `'\DEL'`, and the control character for moving the crusor back one space is `'\b'`.
 
   * ```haskell
     -- Answer goes here
