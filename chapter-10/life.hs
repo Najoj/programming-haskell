@@ -1,3 +1,5 @@
+import Control.Concurrent -- for threadDelay
+
 cls :: IO ()
 cls = putStr "\ESC[2J"
 
@@ -65,9 +67,10 @@ nextgen b = survivors b ++ births b
 life :: Board -> IO ()
 life b = do cls
             showcells b
-            wait 500000
+            wait 100000
             life (nextgen b)
 
 wait :: Int -> IO ()
-wait n = sequence_ [return () | _ <- [1..n]]
+--wait n = sequence_ [return () | _ <- [1..n]]
+wait = threadDelay
 
