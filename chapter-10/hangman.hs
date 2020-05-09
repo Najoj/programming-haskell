@@ -26,7 +26,7 @@ play :: String -> IO ()
 play word = do putStr "? "
                guess <- getLine
                if guess == word then
-                  putStrLn "You got it!!"
+                  putStrLn "You got it!"
                else
                   do putStrLn (match word guess)
                      play word
