@@ -32,6 +32,20 @@ putBoard [a,b,c,d,e] = do putRow 1 a
                           putRow 4 d
                           putRow 5 e
 
+-- ex 2
+putBoard' :: Board -> IO ()
+putBoard' b = putBoardAux 1 b
+
+
+putBoardAux :: Int -> Board -> IO ()
+putBoardAux _ [] = do return()
+putBoardAux n (b:bs) = do putRow n b
+                          putBoardAux (n+1) bs
+
+-- ex 3
+putBoard'' :: Board -> IO ()
+putBoard'' b = sequence_ [ putRow i l | (i, l) <- zip [1..] b ]
+
 getDigit :: String -> IO Int
 getDigit prompt = do putStr prompt
                      x <- getChar
