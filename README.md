@@ -106,4 +106,18 @@ I will do the exercises with
     1. Life
     1. Chapter remarks
     1. Exercises
+11. Unbeatable tic-tac-toe
+    1. Introduction
+    1. Basic declarations
+    1. Grid utilities
+    1. Displaying a grid
+    1. Making a move
+    1. Reading a number
+    1. Human vs human
+    1. Game trees
+    1. Pruning the tree
+    1. Minimax algorithm
+    1. Human vs computer
+    1. Chapter remarks
+    1. Exercises
 
