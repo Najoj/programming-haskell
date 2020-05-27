@@ -1,7 +1,21 @@
 1. Using the function `gametree`, verify that there are 549,946 nodes in the complete game tree for a 3 × 3 tic-tac-toe game starting from the empty grid, and that the maximum depth of this tree is 9.
 
   * ```haskell
-    -- Answer goes here
+    count_nodes :: Tree a -> Int
+    count_nodes (Node _ t) = 1 + sum (map count_nodes t)
+
+    get_depth :: Tree a -> Int
+    get_depth (Node _ []) = 0
+    get_depth (Node _ t ) = 1 + maximum (map get_depth t)
+    ```
+    
+    Run:
+
+    ```
+    *Main> count_nodes (gametree empty O)
+    549946
+    *Main> get_depth (gametree empty O)
+    9
     ```
 
 2. Our tic-tac-toe program always chooses the first move from the list of best moves. Modify the final program to choose a random move from the list of best moves using the function `randomRIO :: (Int,Int) -> IO Int` from `System.Random` to generate a random integer in the given range.
