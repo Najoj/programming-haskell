@@ -10,7 +10,7 @@
     ```
     
 
-2. Complete the following instance declaration to make the partially-applied function of type `(a ->)` into the functior:
+2. Complete the following instance declaration to make the partially-applied function of type `(a ->)` into the functor:
 
     ```haskell
     instance Functor ((->) a) where
@@ -29,7 +29,7 @@
     -- Answer goes here
     ```
 
-4. There may be more than one way to make the prarameterised type into an applicative functior. For example, thi library `Control.Applicative` provides an alternative 'zippy' instance for lists, in which the function `pure` makesan infinite listof copies of its argument, and the operator `<*>` applies each argument function to the corresponding argument value at the same position. Complete the following declarations that implement this idea:
+4. There may be more than one way to make the parameterised type into an applicative functor. For example, the library `Control.Applicative` provides an alternative 'zippy' instance for lists, in which the function `pure` makes an infinite list of copies of its argument, and the operator `<*>` applies each argument function to the corresponding argument value at the same position. Complete the following declarations that implement this idea:
 
     ```haskell
     newtype ZipList a = Z [a] deriving Show
@@ -46,7 +46,7 @@
         (Z gs) <*> (Z xs) = ...
     ```
 
-    The `ZipList` wrapper around the list typeis required because each type can only have at most one instance declaration for a given class.
+    The `ZipList` wrapper around the list type is required because each type can only have at most one instance declaration for a given class.
 
   * ```haskell
     -- Answer goes here
@@ -72,7 +72,7 @@
 
     that contain variables of some type `a`, show how to make this type into instances of `Functor`, `Applicative` and `Monad` classes. With the aid of an example, explain what the `>>=` operator for this type does.
 
-8. Rather than making a parameterised type into instances of the `Functor`, `Applicative` and `Monad` classes in this order, in practice it is sometimes simpler to define the functor and applicative instances in terms of the monad instance, relying on the facto that the order in which declarations are mad eis not important in Haskell. Complete the missing parts in the following declarations for the `ST` type using the `do` notation.
+8. Rather than making a parameterised type into instances of the `Functor`, `Applicative` and `Monad` classes in this order, in practice it is sometimes simpler to define the functor and applicative instances in terms of the monad instance, relying on the fact that the order in which declarations are made is not important in Haskell. Complete the missing parts in the following declarations for the `ST` type using the `do` notation.
 
     ```haskell
     instance Functor ST where
