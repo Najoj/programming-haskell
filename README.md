@@ -120,4 +120,10 @@ I will do the exercises with
     1. Human vs computer
     1. Chapter remarks
     1. Exercises
+12. Monads and more
+    1. Functiors
+    1. Applicatives
+    1. Monads
+    1. Chapter remarks
+    1. Exercises
 
