@@ -19,4 +19,16 @@ instance My.Applicative [] where
         gx <*> xs = [g x | g <- gx, x <- xs]
 
 prods :: [Int] -> [Int] -> [Int]
-prods xs ys = [x*y | x <- xs, y <- ys]
+--prods xs ys = [x*y | x <- xs, y <- ys]
+prods xs ys = My.pure (*) My.<*> xs My.<*> ys
+
+instance My.Applicative IO where
+        -- pure :: a -> IO a
+        pure = return
+        -- (<*>) :: IO (a -> b) -> IO a -> IO b
+        mg <*> mx = do { g <- mg; x <- mx; return (g x)}
+
+getChars :: Int -> IO String
+getChars 0 = return []
+getchars n = My.pure (:) My.<*> getChar My.<*> getChars (n-1)
+
