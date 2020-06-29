@@ -23,13 +23,19 @@
     Hint: first write down the type of `fmap`, and then think if you already know a library function that has this type.
 
   * ```haskell
-    -- Answer goes here
+    instance Functor ((->) a) where
+        -- fmap :: (b -> c) -> (a -> b) -> a -> c
+        fmap f g = f . g
     ```
 
-3. Define an instance of the `Applicative` class for the type `(a ->)`. If you are familiar with combinatory logic,o you might recognise `pure` and `<*>` for this type as being the well-known *K* and *S* combinators.
+3. Define an instance of the `Applicative` class for the type `(a ->)`. If you are familiar with combinatory logic, you might recognise `pure` and `<*>` for this type as being the well-known *K* and *S* combinators.
 
   * ```haskell
-    -- Answer goes here
+    instance Applicative ((->) a) where
+        -- pure :: a -> (a ->)
+        pure = const
+        -- (<*>) :: (->) (a -> b) c -> (a -> c) -> (b -> c)
+        a <*> b = \c -> a c (b c)
     ```
 
 4. There may be more than one way to make the parameterised type into an applicative functor. For example, the library `Control.Applicative` provides an alternative 'zippy' instance for lists, in which the function `pure` makes an infinite list of copies of its argument, and the operator `<*>` applies each argument function to the corresponding argument value at the same position. Complete the following declarations that implement this idea:
