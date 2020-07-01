@@ -126,4 +126,16 @@ I will do the exercises with
     1. Monads
     1. Chapter remarks
     1. Exercises
+13. Monadic parsing
+    1. What is a parser?
+    1. Parses as functions
+    1. Basic definitons
+    1. Sequencing parsers
+    1. Making choices
+    1. Derived primitves
+    1. Handling spacing
+    1. Arithmetic expressions
+    1. Calculator
+    1. Chapter remarks
+    1. Exercises
 
