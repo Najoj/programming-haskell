@@ -7,14 +7,30 @@
 
 2. Using our second grammar for arithmetic expressions, draw the two possible parse trees for the expression `2+3+4`.
 
-  * ```haskell
-    -- Answer goes here
+  * ```
+            expr + 
+     nat 2          expr +
+              nat  3      nat 4
+
+                  expr + 
+          expr +           nat 4
+     nat 2     nat 3
     ```
 
 3. Using our third grammar for arithmetic expressions, draw the parse trees for the expressions `2+3`, `2*3*4` and `(2+3)+4`.
 
-  * ```haskell
-    -- Answer goes here
+  * ```
+            expr +
+     nat 2          nat 3
+    
+                term *
+        term *          nat 4
+    nat 2   nat 3
+
+               expr +
+         factor ()   nat 4
+       expr +
+    nat 2  nat 3
     ```
 
 4. Explain why the final simplification of the grammar for arithmetic expressions has a dramatic effect on the efficiency of the resulting parser. Hint: begin by considering how an expression comprising a single number would be parsed if this simplification step had not been made.
