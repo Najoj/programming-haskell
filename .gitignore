@@ -3,5 +3,6 @@
 # Only allow these:
 !*.hs
 !*.md
-!*/
+!chapter-*/
 !Makefile
+

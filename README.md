@@ -138,4 +138,10 @@ I will do the exercises with
     1. Calculator
     1. Chapter remarks
     1. Exercises
+14. Foldables and friends
+    1. Monoids
+    1. Foldables
+    1. Traversables
+    1. Chapter remarks
+    1. Exercises
 
