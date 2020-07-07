@@ -68,3 +68,11 @@ newline :: IO ()
 newline = putChar '\n'
 
 -- ex 5
+-- tbd
+
+-- ex 6
+readLine :: IO String
+readLine = do char <- getCh
+              printChar char
+
+printChar
