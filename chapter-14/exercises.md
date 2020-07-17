@@ -63,10 +63,10 @@
     instance Foldable Tree where
         -- fold :: Monoid a => Tree a -> a
         fold Leaf           = mempty
-        fold (Node l x r)   = fold l `mappend` x `mappend` r
+        fold (Node l x r)   = fold l `mappend` x `mappend` fold r
         -- foldMap :: Monoid a => a -> Tree a
         foldMap _ (Leaf)        = mempty
-        foldMap f (Node l x r)  = (foldMap g l) `mappend` x `mappend` (foldMap g r)
+        foldMap f (Node l x r)  = (foldMap f l) `mappend` x `mappend` (foldMap f r)
         -- foldr :: (a -> b -> b) -> b -> Tree a -> b
         foldr f v (Leaf)        = v
         foldr f v (Node l x r)  = foldr f (f x (foldr f v r)) l

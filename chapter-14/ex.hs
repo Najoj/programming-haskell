@@ -1,20 +1,13 @@
 import Data.Monoid
 
-newtype MySum a = MySum a
-    deriving (Eq, Ord, Show, Read)
-
-getum :: MySum a -> a
-getum (MySum x) = x
-
-instance Num a => Monoid (MySum a) where
-    -- mempty :: MySum a
-    mempty = MySum 0
-    -- mappend :: MySum a -> MySum a -> MySum a
-    MySum x `mappend` MySum y = MySum (x+y)
-
--- Apparently required now
-instance Semigroup a => Semigroup (MySum a) where
-        (MySum x) <> mempty = (MySum x)
-        mempty <> (MySum x) = (MySum x)
-        
-
+--instance Monoid [a] where
+        ---- mempty :: [a]
+    --mempty = []
+    ---- mappend :: [a] -> [a] -> [a]
+    --mappend = (++)
+    --
+instance Monoid a => Monoid (Maybe a) where
+        mempty = Nothing
+        Nothing `mappend` my = my
+        mx `mappend` Nothing = mx
+        Just x `mappend` Just y = Just (x `mappend` y)
